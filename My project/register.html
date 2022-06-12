@@ -19,7 +19,7 @@
     <!-- icons -->
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Local CSS -->
-    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="http://localhost:8081/OpticLens/styles/style.css">
     <!-- Font awesome cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- Local javascript -->
@@ -136,9 +136,9 @@
 
             <div class="box">
                 <h3>News Letter</h3>
-                <p>Subscripe for latest updates</p>
-                <form action="">
-                    <input type="email" placeholder="enter your email...">
+                <p>Subscribe for latest updates</p>
+                <form action="subscribe.jsp" method="post">
+                    <input type="email" placeholder="enter your email..." name="Email">
                     <input type="submit" value="subscribe" class="btn">
                 </form>
             </div>

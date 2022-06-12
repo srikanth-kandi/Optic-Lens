@@ -17,6 +17,9 @@ window.onscroll = () => {
     navbar.classList.remove('active');
 }
 
+
+
+// manual slides
 let slides = document.querySelectorAll('.home .slide');
 let index = 0;
 function next(){
