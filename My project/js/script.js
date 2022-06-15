@@ -96,8 +96,35 @@ function readValues()
             else if(password.length < 8){
                 alert("Please enter 8 digit passowrd ")
             }
-            else{
-                // successfull login
-                window.open('index.html','_blank');
-            }
         }
+
+// register validation
+function registerValidation()
+{
+    username = document.register_form.register_name.value;
+    email = document.register_form.register_email.value;
+    password = document.register_form.register_password.value;
+    cpass = document.register_form.register_confirm_password.value;
+    
+    if(username=="" || username==null){
+        alert("Please enter your name")
+    }
+    else if(email=="" || email==null){
+        alert("Please enter email");
+    }
+    else if(password=="" || password==null){
+        alert("Please enter password")
+    }
+    else if(cpass=="" || cpass==null){
+        alert("Please enter confirm password")
+    }
+    else if(password.length < 8){
+        alert("Please create an 8 digit password")
+    }
+    else if(cpass.length < 8){
+        alert("Please enter confirm password of length > 8")
+    }
+    else if(password != cpass){
+        alert("Please enter password and confirm password same")
+    }
+}

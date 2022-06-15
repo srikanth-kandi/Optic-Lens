@@ -70,21 +70,21 @@
 
     <section class="login-form">
 
-        <form name= "login_form" action="">
+        <form name= "login_form" action="login.jsp" method="post">
             <h3>User login</h3>
             <div class="inputbox">
                 <span class="fas fa-user"></span>
-                <input type="email" name="name" id="" placeholder="enter your email">
+                <input type="email" name="login_mail" id="" placeholder="enter your email">
             </div>
             <div class="inputbox">
                 <span class="fas fa-lock"></span>
-                <input type="password" name="pwd" id="" placeholder="enter your password">
+                <input type="password" name="login_pwd" id="" placeholder="enter your password">
             </div>
             <input type="submit" value="Login ↪" class="btn" onclick="readValues()">
             <div class="flex">
-                <input type="checkbox" name="" id="remember-me" class="large-checkbox">
+                <input type="checkbox" name="login_remember_me" id="remember-me" class="large-checkbox" value="remember_me">
                 <label for="remember-me">remember me</label>
-                <a href="#" style="color:black;text-decoration:none">forgot password?</a>
+                <a href="forgot_password.html" style="color:black;text-decoration:none">forgot password?</a>
             </div>
             <a href="register.html" class="btn">create an account</a>
         </form>

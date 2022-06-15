@@ -71,25 +71,31 @@
 
     <section class="register-form">
 
-        <form action="">
-            <h3>User login</h3>
+        <form action="register.jsp" name="register_form" method="post">
+            <h3>User Registration</h3>
             <div class="inputbox">
                 <span class="fas fa-user"></span>
-                <input type="email" name="" id="" placeholder="enter your name">
+                <input type="text" name="register_name" id="" placeholder="enter your name">
             </div>
             <div class="inputbox">
                 <span class="fas fa-envelope"></span>
-                <input type="email" name="" id="" placeholder="enter your email">
+                <input type="email" name="register_email" id="" placeholder="enter your email">
             </div>
             <div class="inputbox">
                 <span class="fas fa-lock"></span>
-                <input type="password" name="" id="" placeholder="enter your password">
+                <input type="password" name="register_password" id="" placeholder="enter your password">
             </div>
             <div class="inputbox">
                 <span class="fas fa-lock"></span>
-                <input type="password" name="" id="" placeholder="confirm your password">
+                <input type="password" name="register_confirm_password" id="" placeholder="confirm your password">
             </div>
-            <input type="submit" value="Sign up" class="btn">
+            <div class="inputbox">
+                <select name="user_type">
+                    <option value="user">User</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </div>
+            <input type="submit" value="Sign up" class="btn" onclick="registerValidation()">
             <a href="login.html" class="btn">Already have an account</a>
         </form>
 

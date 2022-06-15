@@ -740,6 +740,14 @@ section {
         color: $light-color;
         text-transform: none;
       }
+      select{
+        width: 100%;
+        border: 1px solid #ccc;
+        padding: 10px 15px;
+        font-size: 15px;
+        text-transform: none;
+        background: $light-bg;
+      }
     }
     .flex {
       display: flex;
