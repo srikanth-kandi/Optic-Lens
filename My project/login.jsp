@@ -1,6 +1,7 @@
 <%@ page import="java.sql.*"%>
 <%@ page import="javax.servlet.http.*,java.lang.*"%>
 <%
+    response.setHeader("Cache-Control","no-cache, no-store, must-revalidate");
     String mail = request.getParameter("login_mail");
     String password = request.getParameter("login_pwd");
     String remember_me = request.getParameter("login_remember_me");

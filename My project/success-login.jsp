@@ -1,6 +1,7 @@
 <%@ page import="java.sql.*"%>
 <%@ page import="javax.servlet.http.*,java.lang.*"%>
 <%
+    response.setHeader("Cache-Control","no-cache, no-store, must-revalidate");
     String mail = (String)session.getAttribute("Email");
     try{
         Connection con = null;
@@ -18,6 +19,9 @@
             db_type = resultSet.getString("user_type");
         }
         out.println("Hey! "+db_uname+" ("+db_type+")");
+        HttpSession sessn = request.getSession();
+        sessn.setAttribute("success-login-uname",db_uname);
+        sessn.setAttribute("success-login-mail",mail);
     }
     catch(Exception e)
     {
@@ -27,7 +31,7 @@
 <html>
     <script>
         setTimeout(function(){
-            window.location.href = 'http://localhost:8081/OpticLens/index.html';
+            window.location.href = 'http://localhost:8081/OpticLens/index.jsp';
         },5000);
     </script>
     <!--<p>Hey &#128075; <%= mail %></p>-->

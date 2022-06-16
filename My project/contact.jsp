@@ -1,6 +1,11 @@
 <%@ page import="java.sql.*"%>
 <%@ page import="javax.servlet.http.*,java.lang.*"%>
 <%
+    if (session.getAttribute("success-login-uname")==null){
+        response.sendRedirect("http://localhost:8081/OpticLens/login.html");
+    }
+%>
+<%
     String name = request.getParameter("contact_name");
     String mail = request.getParameter("contact_mail");
     Long number = Long.parseLong(request.getParameter("contact_number"));
@@ -25,8 +30,8 @@
 <html>
     <script>
         setTimeout(function(){
-            window.location.href = 'http://localhost:8081/OpticLens/index.html';
-         }, 5000);
+            window.location.href = 'http://localhost:8081/OpticLens/index.jsp';
+        }, 5000);
     </script>
     <p>Hey &#128075; <%= name %></p>
     <p>We will reach you out soon 📬</p>

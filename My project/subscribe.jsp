@@ -1,6 +1,12 @@
 <%@ page import="java.sql.*"%>
 <%@ page import="javax.servlet.http.*,java.lang.*"%>
 <%
+    response.setHeader("Cache-Control","no-cache, no-store, must-revalidate"); // HTTP 1.1
+    if (session.getAttribute("success-login-uname")==null){
+        response.sendRedirect("http://localhost:8081/OpticLens/login.html");
+    }
+%>
+<%
     String mail = request.getParameter("Email");
     try{
         Connection con = null;
@@ -10,7 +16,6 @@
         PreparedStatement pstmt = con.prepareStatement(qry);
         pstmt.setString(1,mail);
         int sts = pstmt.executeUpdate();
-        out.println("Hey, "+mail);
     }
     catch(Exception e)
     {
@@ -20,8 +25,9 @@
 <html>
     <script>
         setTimeout(function(){
-            window.location.href = 'http://localhost:8081/OpticLens/index.html';
+            window.location.href = 'http://localhost:8081/OpticLens/index.jsp';
          }, 5000);
     </script>
+    <p>Hey &#128075; <%= mail %></p>
     <p>Thank you for subscribing &#128150;</p>
 </html>

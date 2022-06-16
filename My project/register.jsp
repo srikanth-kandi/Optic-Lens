@@ -1,6 +1,12 @@
 <%@ page import="java.sql.*"%>
 <%@ page import="javax.servlet.http.*,java.lang.*"%>
 <%
+    response.setHeader("Cache-Control","no-cache, no-store, must-revalidate"); // HTTP 1.1
+    if (session.getAttribute("success-login-uname")==null){
+        response.sendRedirect("http://localhost:8081/OpticLens/login.html");
+    }
+%>
+<%
     String name = request.getParameter("register_name");
     String mail = request.getParameter("register_email");
     String password = request.getParameter("register_password");

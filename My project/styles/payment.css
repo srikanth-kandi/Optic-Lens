@@ -67,6 +67,7 @@
   padding: 10px 15px;
   font-size: 15px;
   text-transform: none;
+  background-color: #fff;
 }
 
 .container form .row .col .inputBox textarea {

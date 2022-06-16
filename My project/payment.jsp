@@ -1,6 +1,12 @@
 <%@ page import="java.sql.*"%>
 <%@ page import="javax.servlet.http.*,java.lang.*"%>
 <%
+    response.setHeader("Cache-Control","no-cache, no-store, must-revalidate"); // HTTP 1.1
+    if (session.getAttribute("success-login-uname")==null){
+        response.sendRedirect("http://localhost:8081/OpticLens/login.html");
+    }
+%>
+<%
     String full_name = request.getParameter("Full_Name");
     String email = request.getParameter("Email");
     String address = request.getParameter("Address");
@@ -40,8 +46,8 @@
 <html>
     <script>
         setTimeout(function(){
-            window.location.href = 'http://localhost:8081/OpticLens/index.html';
-         }, 5000);
+            window.location.href = 'http://localhost:8081/OpticLens/index.jsp';
+        }, 5000);
     </script>
     <p>Your payment is confirmed &#128150;</p>
 </html>
