@@ -31,7 +31,7 @@
 <html>
     <script>
         setTimeout(function(){
-            window.location.href = 'http://localhost:8081/OpticLens/login.html';
+            window.location.href = 'http://localhost:8081/OpticLens/login-now.jsp';
         },5000);
     </script>
 </html>

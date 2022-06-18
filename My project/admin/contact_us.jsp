@@ -2,7 +2,7 @@
 <%@ page import="javax.servlet.http.*,java.lang.*"%>
 <%
     response.setHeader("Cache-Control","no-cache, no-store, must-revalidate"); // HTTP 1.1
-    if (session.getAttribute("success-login-uname")==null){
+    if (session.getAttribute("success-admin-login-uname")==null){
         response.sendRedirect("http://localhost:8081/OpticLens/login-now.jsp");
     }
 %>
@@ -13,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Favicon -->
-    <link rel="shortcut icon" href="images/logo/eyeglasses (1).png" type="image/x-icon">
+    <link rel="shortcut icon" href="http://localhost:8081/OpticLens/images/logo/eyeglasses (1).png" type="image/x-icon">
     <!-- https://swiperjs.com -->
     <link
       rel="stylesheet"
@@ -31,28 +31,28 @@
     <!-- Font awesome cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- Local javascript -->
-    <script src="js/script.js" defer></script>
+    <script src="http://localhost:8081/OpticLens/js/script.js" defer></script>
     <title>Contact us | Optic Lens</title>
 </head>
 <body>
     <!-- header section -->
     <header class="header">
-        <a href="index.jsp" class="logo"><img src="images/logo/eyeglasses_header.png" alt="">&nbsp;Optic Lens</a>
+        <a href="http://localhost:8081/OpticLens/admin/index.jsp" class="logo"><img src="http://localhost:8081/OpticLens/images/logo/eyeglasses_header.png" alt="">&nbsp;Optic Lens</a>
         <nav class="navbar">
             <ul>
-                <li><a href="index.jsp" class="active">Home</a></li>
-                <li><a href="products.jsp">Products</a></li>
+                <li><a href="http://localhost:8081/OpticLens/admin/index.jsp" class="active">Home</a></li>
+                <li><a href="http://localhost:8081/OpticLens/admin/products.jsp">Products</a></li>
                 <li><a href="#">Pages <i class="ion-chevron-down"></i></span></a>
                     <ul>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="blogs.html">Blog</a></li>
+                        <li><a href="http://localhost:8081/OpticLens/admin/about.html">About</a></li>
+                        <li><a href="http://localhost:8081/OpticLens/admin/blogs.html">Blog</a></li>
                     </ul>
                 </li>
-                <li style="background-color: #eee;font-weight: 900;"><a href="contact_us.jsp">Contact us</a></li>
-                <li><a href="#">Hello &#128075; <% String index_uname = (String) session.getAttribute("success-login-uname"); %> <%= index_uname %> <i class="ion-chevron-down"></i></a>
+                <li style="background-color: #eee;font-weight: 900;"><a href="http://localhost:8081/OpticLens/admin/contact_us.jsp">Contact us</a></li>
+                <li><a href="#">Hello &#128075; <% String index_uname = (String) session.getAttribute("success-admin-login-uname"); %> <%= index_uname %> <i class="ion-chevron-down"></i></a>
                     <ul>
                         <li>
-                            <a href="logout.jsp">Logout <i class="fas fa-sign-out-alt"></i></a>
+                            <a href="http://localhost:8081/OpticLens/admin-logout.jsp">Logout <i class="fas fa-sign-out-alt"></i></a>
                         </li>
                     </ul>
                 </li>
@@ -61,7 +61,7 @@
         <div class="icons">
             <div id="menu-btn" class="fas fa-bars"></div>
             <div id="search-btn" class="fas fa-search"></div>
-            <a href="cart.jsp" class="fas fa-shopping-cart"></a>
+            <a href="http://localhost:8081/OpticLens/admin/cart.jsp" class="fas fa-shopping-cart"></a>
         </div>
         <form action="" class="search-form">
             <input type="search" name="" id="search-box" placeholder="search here...">
@@ -72,7 +72,7 @@
 
     <section class="heading">
         <h1>Contact us</h1>
-        <p><a href="index.jsp">Home&nbsp;<i class="fas fa-home" style="color:black;text-decoration: none;"></i></a> >> <a href="contact_us.jsp">Contact us</a></p>
+        <p><a href="http://localhost:8081/OpticLens/admin/index.jsp">Home&nbsp;<i class="fas fa-home" style="color:black;text-decoration: none;"></i></a> >> <a href="http://localhost:8081/OpticLens/admin/contact_us.jsp">Contact us</a></p>
     </section>
     <!-- contact us section start -->
 
@@ -81,7 +81,7 @@
             get in touch
         </h1>
         <div class="row">
-            <form action="contact.jsp" method="post">
+            <form action="http://localhost:8081/OpticLens/admin/contact.jsp" method="post">
                 <input type="text" class="box" name="contact_name" id="" placeholder="your name">
                 <input type="email" class = "box" name="contact_mail" id="" placeholder="your email">
                 <input type="tel" class="box" name="contact_number" id="" placeholder="your number">
@@ -100,14 +100,14 @@
         <div class="box-container">
             <div class="box">
                 <h3>Quick links</h3>
-                <a href="index.jsp"><i class="fas fa-angle-right"></i>Home</a>
-                <a href="products.jsp"><i class="fas fa-angle-right"></i>Products</a>
-                <a href="about.html"><i class="fas fa-angle-right"></i>About</a>
-                <a href="blogs.html"><i class="fas fa-angle-right"></i>Blogs</a>
-                <a href="contact_us.jsp"><i class="fas fa-angle-right"></i>Contact</a>
-                <a href="login-now.jsp"><i class="fas fa-angle-right"></i>Login</a>
-                <a href="register.html"><i class="fas fa-angle-right"></i>Register</a>
-                <a href="cart.html"><i class="fas fa-angle-right"></i>Cart</a>
+                <a href="http://localhost:8081/OpticLens/admin/index.jsp"><i class="fas fa-angle-right"></i>Home</a>
+                <a href="http://localhost:8081/OpticLens/admin/products.jsp"><i class="fas fa-angle-right"></i>Products</a>
+                <a href="http://localhost:8081/OpticLens/admin/about.html"><i class="fas fa-angle-right"></i>About</a>
+                <a href="http://localhost:8081/OpticLens/admin/blogs.html"><i class="fas fa-angle-right"></i>Blogs</a>
+                <a href="http://localhost:8081/OpticLens/admin/contact_us.jsp"><i class="fas fa-angle-right"></i>Contact</a>
+                <a href="http://localhost:8081/OpticLens/login-now.jsp"><i class="fas fa-angle-right"></i>Login</a>
+                <a href="http://localhost:8081/OpticLens/register.html"><i class="fas fa-angle-right"></i>Register</a>
+                <a href="http://localhost:8081/OpticLens/cart.html"><i class="fas fa-angle-right"></i>Cart</a>
             </div>
 
             <div class="box">
@@ -133,7 +133,7 @@
             <div class="box">
                 <h3>News Letter</h3>
                 <p>Subscribe for latest updates</p>
-                <form action="subscribe.jsp" method="post">
+                <form action="http://localhost:8081/OpticLens/admin/subscribe.jsp" method="post">
                     <input type="email" placeholder="enter your email..." name="Email">
                     <input type="submit" value="subscribe" class="btn">
                 </form>

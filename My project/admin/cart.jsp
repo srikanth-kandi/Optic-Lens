@@ -2,7 +2,7 @@
 <%@ page import="javax.servlet.http.*,java.lang.*"%>
 <%
     response.setHeader("Cache-Control","no-cache, no-store, must-revalidate"); // HTTP 1.1
-    if (session.getAttribute("success-login-uname")==null){
+    if (session.getAttribute("success-admin-login-uname")==null){
         response.sendRedirect("http://localhost:8081/OpticLens/login-now.jsp");
     }
 %>
@@ -13,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Favicon -->
-    <link rel="shortcut icon" href="images/logo/eyeglasses (1).png" type="image/x-icon">
+    <link rel="shortcut icon" href="http://localhost:8081/OpticLens/images/logo/eyeglasses (1).png" type="image/x-icon">
     <!-- https://swiperjs.com -->
     <link
       rel="stylesheet"
@@ -31,13 +31,13 @@
     <!-- Font awesome cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- Local javascript -->
-    <script src="js/script.js" defer></script>
+    <script src="http://localhost:8081/OpticLens/js/script.js" defer></script>
     <title>Cart | Optic Lens</title>
 </head>
 <body>
     <!-- header section -->
     <header class="header">
-        <a href="index.jsp" class="logo"><img src="images/logo/eyeglasses_header.png" alt="">&nbsp;Optic Lens</a>
+        <a href="http://localhost:8081/OpticLens/admin/index.jsp" class="logo"><img src="http://localhost:8081/OpticLens/images/logo/eyeglasses_header.png" alt="">&nbsp;Optic Lens</a>
         <nav class="navbar">
             <ul>
                 <li><div class="currency-toggler">
@@ -45,21 +45,21 @@
                     <div class="toggler"></div>
                     <span>INR(&#8377;)</span>
                 </div></li>
-                <li><a href="index.jsp" class="active">Home</a></li>
-                <li><a href="products.jsp">products
+                <li><a href="http://localhost:8081/OpticLens/admin/index.jsp" class="active">Home</a></li>
+                <li><a href="http://localhost:8081/OpticLens/admin/products.jsp">products
         
                 </a></li>
                 <li><a href="#">Pages <i class="ion-chevron-down"></i></span></a>
                     <ul>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="blogs.html">Blog</a></li>
+                        <li><a href="http://localhost:8081/OpticLens/admin/about.html">About</a></li>
+                        <li><a href="http://localhost:8081/OpticLens/admin/blogs.html">Blog</a></li>
                     </ul>
                 </li>
-                <li><a href="contact_us.jsp">Contact us</a></li>
-                <li><a href="#">Hello &#128075; <% String index_uname = (String) session.getAttribute("success-login-uname"); %> <%= index_uname %> <i class="ion-chevron-down"></i></a>
+                <li><a href="http://localhost:8081/OpticLens/admin/contact_us.jsp">Contact us</a></li>
+                <li><a href="#">Hello &#128075; <% String index_uname = (String) session.getAttribute("success-admin-login-uname"); %> <%= index_uname %> <i class="ion-chevron-down"></i></a>
                     <ul>
                         <li>
-                            <a href="logout.jsp">Logout <i class="fas fa-sign-out-alt"></i></a>
+                            <a href="http://localhost:8081/OpticLens/admin-logout.jsp">Logout <i class="fas fa-sign-out-alt"></i></a>
                         </li>
                     </ul>
                 </li>
@@ -68,7 +68,7 @@
         <div class="icons">
             <div id="menu-btn" class="fas fa-bars"></div>
             <div id="search-btn" class="fas fa-search"></div>
-            <a href="cart.jsp" class="fas fa-shopping-cart"></a>
+            <a href="http://localhost:8081/OpticLens/admin/cart.jsp" class="fas fa-shopping-cart"></a>
         </div>
         <form action="" class="search-form">
             <input type="search" name="" id="search-box" placeholder="search here...">
@@ -78,7 +78,7 @@
 
     <section class="heading">
         <h1>Shopping Cart</h1>
-        <p><a href="index.jsp">Home&nbsp;<i class="fas fa-home" style="color:black;text-decoration: none;"></i></a> >> <a href="cart.jsp">Cart</a></p>
+        <p><a href="http://localhost:8081/OpticLens/admin/index.jsp">Home&nbsp;<i class="fas fa-home" style="color:black;text-decoration: none;"></i></a> >> <a href="http://localhost:8081/OpticLens/admin/cart.jsp">Cart</a></p>
     </section>
     <!-- header section ends -->
 
@@ -89,7 +89,7 @@
         <div class="box-container">
             <div class="box">
                 <i class="fas fa-times"></i>
-                    <img src="images/cart-item-1.png" alt="">
+                    <img src="http://localhost:8081/OpticLens/images/cart-item-1.png" alt="">
                     <div class="content">
                         <h3>Premium glasses</h3>
                         <form action="">
@@ -101,20 +101,7 @@
             </div>
             <div class="box">
                 <i class="fas fa-times"></i>
-                    <img src="images/cart-item-2.png" alt="">
-                    <div class="content">
-                        <h3>Premium glasses</h3>
-                        <form action="">
-                            <span>quantity :</span>
-                            <input type="number" name="" id="" value="1">
-                        </form>
-                        <div class="price"><span class="dollar">$</span><span class="dprice">20.00</span>&nbsp;&nbsp;<span class="striked-price"><span class="dollar" style="font-size: 1.5rem;">$</span><span class = "dprice" style="font-size: 1.5rem;font-weight: 400;">25.00</span></span></div>
-                    </div>
-                
-            </div>
-            <div class="box">
-                <i class="fas fa-times"></i>
-                    <img src="images/cart-item-3.png" alt="">
+                    <img src="http://localhost:8081/OpticLens/images/cart-item-2.png" alt="">
                     <div class="content">
                         <h3>Premium glasses</h3>
                         <form action="">
@@ -127,7 +114,7 @@
             </div>
             <div class="box">
                 <i class="fas fa-times"></i>
-                    <img src="images/cart-item-4.png" alt="">
+                    <img src="http://localhost:8081/OpticLens/images/cart-item-3.png" alt="">
                     <div class="content">
                         <h3>Premium glasses</h3>
                         <form action="">
@@ -140,7 +127,20 @@
             </div>
             <div class="box">
                 <i class="fas fa-times"></i>
-                    <img src="images/cart-item-5.png" alt="">
+                    <img src="http://localhost:8081/OpticLens/images/cart-item-4.png" alt="">
+                    <div class="content">
+                        <h3>Premium glasses</h3>
+                        <form action="">
+                            <span>quantity :</span>
+                            <input type="number" name="" id="" value="1">
+                        </form>
+                        <div class="price"><span class="dollar">$</span><span class="dprice">20.00</span>&nbsp;&nbsp;<span class="striked-price"><span class="dollar" style="font-size: 1.5rem;">$</span><span class = "dprice" style="font-size: 1.5rem;font-weight: 400;">25.00</span></span></div>
+                    </div>
+                
+            </div>
+            <div class="box">
+                <i class="fas fa-times"></i>
+                    <img src="http://localhost:8081/OpticLens/images/cart-item-5.png" alt="">
                     <div class="content">
                         <h3>Premium glasses</h3>
                         <form action="">
@@ -158,7 +158,7 @@
         <div class="cart-total">
             <h3>subtotal : <span class="dollar">$</span><span class="dprice">100.00</span></h3>
             <h3>total : <span class="dollar">$</span><span class="dprice">100.00</span></h3>
-            <a href="payment_form.jsp" class="btn">proceed to checkout</a>
+            <a href="http://localhost:8081/OpticLens/admin/payment_form.jsp" class="btn">proceed to checkout</a>
         </div>
     </section>
 
@@ -169,14 +169,14 @@
         <div class="box-container">
             <div class="box">
                 <h3>Quick links</h3>
-                <a href="index.jsp"><i class="fas fa-angle-right"></i>Home</a>
-                <a href="products.jsp"><i class="fas fa-angle-right"></i>products</a>
-                <a href="about.html"><i class="fas fa-angle-right"></i>About</a>
-                <a href="blogs.html"><i class="fas fa-angle-right"></i>Blogs</a>
-                <a href="contact_us.jsp"><i class="fas fa-angle-right"></i>Contact</a>
-                <a href="login-now.jsp"><i class="fas fa-angle-right"></i>Login</a>
-                <a href="register.html"><i class="fas fa-angle-right"></i>Register</a>
-                <a href="cart.jsp"><i class="fas fa-angle-right"></i>Cart</a>
+                <a href="http://localhost:8081/OpticLens/admin/index.jsp"><i class="fas fa-angle-right"></i>Home</a>
+                <a href="http://localhost:8081/OpticLens/admin/products.jsp"><i class="fas fa-angle-right"></i>products</a>
+                <a href="http://localhost:8081/OpticLens/admin/about.html"><i class="fas fa-angle-right"></i>About</a>
+                <a href="http://localhost:8081/OpticLens/admin/blogs.html"><i class="fas fa-angle-right"></i>Blogs</a>
+                <a href="http://localhost:8081/OpticLens/admin/contact_us.jsp"><i class="fas fa-angle-right"></i>Contact</a>
+                <a href="http://localhost:8081/OpticLens/login-now.jsp"><i class="fas fa-angle-right"></i>Login</a>
+                <a href="http://localhost:8081/OpticLens/register.html"><i class="fas fa-angle-right"></i>Register</a>
+                <a href="http://localhost:8081/OpticLens/admin/cart.jsp"><i class="fas fa-angle-right"></i>Cart</a>
             </div>
 
             <div class="box">
@@ -202,7 +202,7 @@
             <div class="box">
                 <h3>News Letter</h3>
                 <p>Subscribe for latest updates</p>
-                <form action="subscribe.jsp" method="post">
+                <form action="http://localhost:8081/OpticLens/admin/subscribe.jsp" method="post">
                     <input type="email" placeholder="enter your email..." name="Email">
                     <input type="submit" value="subscribe" class="btn">
                 </form>

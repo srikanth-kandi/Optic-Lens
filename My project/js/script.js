@@ -55,13 +55,13 @@ var swiper = new Swiper(".mySwiper", {
 let toggler = document.querySelector('.toggler');
 let price = document.querySelectorAll('.dprice');
 let dollar = document.querySelectorAll('.dollar');
-let usd = 74.96; // as of 31-01-2022: 1$ = ₹74.96
+let usd = 77.95; // as of 18-06-2022: 1$ = ₹77.95
 
 toggler.onclick = () => {
     toggler.classList.toggle('active');
     if(toggler.classList.contains('active')){
         for(var i=0;i < dollar.length; i++){
-            dollar[i].innerText = '₹';
+            dollar[i].innerText = '\u20B9';
         }
         for(var k=0;k < price.length; k++){
             price[k].innerText = (price[k].innerText * usd).toFixed(2);

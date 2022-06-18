@@ -5,7 +5,7 @@ String email = (String) session.getAttribute("Email");
 <html>
     <script>
         setTimeout(function(){
-            window.location.href = 'http://localhost:8081/OpticLens/login.html';
+            window.location.href = 'http://localhost:8081/OpticLens/login-now.jsp';
         },7000);
     </script>
     <p>Hey &#128075; <%= email %></p>

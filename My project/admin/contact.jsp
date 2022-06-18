@@ -1,7 +1,7 @@
 <%@ page import="java.sql.*"%>
 <%@ page import="javax.servlet.http.*,java.lang.*"%>
 <%
-    if (session.getAttribute("success-login-uname")==null){
+    if (session.getAttribute("success-admin-login-uname")==null){
         response.sendRedirect("http://localhost:8081/OpticLens/login-now.jsp");
     }
 %>
@@ -30,7 +30,7 @@
 <html>
     <script>
         setTimeout(function(){
-            window.location.href = 'http://localhost:8081/OpticLens/index.jsp';
+            window.location.href = 'http://localhost:8081/OpticLens/admin/index.jsp';
         }, 5000);
     </script>
     <p>Hey &#128075; <%= name %></p>

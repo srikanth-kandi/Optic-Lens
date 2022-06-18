@@ -2,7 +2,7 @@
 <%@ page import="javax.servlet.http.*,java.lang.*"%>
 <%
     response.setHeader("Cache-Control","no-cache, no-store, must-revalidate"); // HTTP 1.1
-    if (session.getAttribute("success-login-uname")==null){
+    if (session.getAttribute("success-admin-login-uname")==null){
         response.sendRedirect("http://localhost:8081/OpticLens/login-now.jsp");
     }
 %>
@@ -25,7 +25,7 @@
 <html>
     <script>
         setTimeout(function(){
-            window.location.href = 'http://localhost:8081/OpticLens/index.jsp';
+            window.location.href = 'http://localhost:8081/OpticLens/admin/index.jsp';
          }, 5000);
     </script>
     <p>Hey &#128075; <%= mail %></p>

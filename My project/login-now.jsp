@@ -1,3 +1,14 @@
+<%@ page import="java.sql.*"%>
+<%@ page import="javax.servlet.http.*,java.lang.*"%>
+<%
+    response.setHeader("Cache-Control","no-cache, no-store, must-revalidate"); // HTTP 1.1
+    if (session.getAttribute("success-admin-login-uname")!=null){
+        response.sendRedirect("http://localhost:8081/OpticLens/admin/index.jsp");
+    }
+    if (session.getAttribute("success-login-uname")!=null){
+        response.sendRedirect("http://localhost:8081/OpticLens/index.jsp");
+    }
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,135 +35,90 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- Local javascript -->
     <script src="js/script.js" defer></script>
-    <title>Home | Optic Lens</title>
+    <title>Login | Optic Lens</title>
 </head>
 <body>
     <!-- header section -->
     <header class="header">
-        <a href="index.html" class="logo"><img src="images/logo/eyeglasses_header.png" alt="">&nbsp;Optic Lens</a>
+        <a href="index.jsp" class="logo"><img src="images/logo/eyeglasses_header.png" alt="">&nbsp;Optic Lens</a>
         <nav class="navbar">
             <ul>
-                <li style="background-color: #eee;font-weight: 900;"><a href="index.html" class="active">Home</a></li>
-                <li><a href="products.html">Products</a></li>
+                <li><a href="index.jsp" class="active">Home</a></li>
+                <li><a href="products.jsp">Products</a></li>
                 <li><a href="#">Pages <i class="ion-chevron-down"></i></span></a>
                     <ul>
                         <li><a href="about.html">About</a></li>
                         <li><a href="blogs.html">Blog</a></li>
                     </ul>
                 </li>
-                <li><a href="contact.html">Contact us</a></li>
+                <li><a href="contact_us.jsp">Contact us</a></li>
+                <li style="background-color: #eee;font-weight: 900;"><a href="#">Account <i class="ion-chevron-down"></i></a>
+                    <ul>
+                        <li style="background-color: #eee;font-weight: 900;"><a href="login-now.jsp">Login</a></li>
+                        <li><a href="register.html">Register</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
         <div class="icons">
             <div id="menu-btn" class="fas fa-bars"></div>
             <div id="search-btn" class="fas fa-search"></div>
-            <a href="cart.html" class="fas fa-shopping-cart"></a>
-            <a href=""><i class="fas fa-sign-out-alt"></i></a>
+            <a href="cart.jsp" class="fas fa-shopping-cart"></a>
         </div>
-        <form action="" class="search-form" id="search-form">
+        <form action="" class="search-form">
             <input type="search" name="" id="search-box" placeholder="search here...">
             <label for="search-box" class="fas fa-search"></label>
         </form>
     </header>
     <!-- header section ends -->
 
-    <!-- home section start -->
-    <!-- Swiper -->
-    <section class="home">
-        <div class="swiper-slide slide" style="background: url(images/home-bg-1.png) no-repeat;">
-            <div class="content">
-                <span>Study Eye wear</span>
-                <h3>upto 50% off *</h3>
-                <a href="#" class="btn">Shop now</a>
-            </div>
-        </div>
-    
-        <div class="slide active swiper-slide" style="background: url(images/home-bg-2.png) no-repeat;">
-            <div class="content">
-                <span>Professional eye wear</span>
-                <h3>upto 30% off *</h3>
-                <a href="#" class="btn">Shop now</a>
-            </div>
-        </div>
-    
-        <div class="slide swiper-slide" style="background: url(images/power-glass.png) no-repeat;">
-            <div class="content">
-                <span style="color:white">Power Glasses</span>
-                <h3 style="color:white">upto 60% off *</h3>
-                <a href="#" class="btn">Shop now</a>
-            </div>
-        </div>
-    
-        <div class="slide swiper-slide" style="background: url(images/studyglass-slider1.jpg) no-repeat;">
-            <div class="content">
-                <span>Study Eye wear</span>
-                <h3>upto 70% off *</h3>
-                <a href="#" class="btn">Shop now</a>
-            </div>
-        </div>
-    
-        <div class="slide swiper-slide" style="background: url(images/sunglass-slider2.jpg) no-repeat;">
-            <div class="content">
-                <span style="color:white">Sunglasses</span>
-                <h3 style="color:white">upto 30% off *</h3>
-                <a href="#" class="btn">Shop now</a>
-            </div>
-        </div>
-
-        <div class="slide swiper-slide" style="background: url(images/home-bg-4.png) no-repeat;">
-            <div class="content">
-                <span>Casual Eye wear</span>
-                <h3>upto 80% off *</h3>
-                <a href="#" class="btn">Shop now</a>
-            </div>
-        </div>
-        <div id="prev-slide" onclick="prev()" class="fas fa-angle-left"></div>
-        <div id="next-slide" onclick="next()" class="fas fa-angle-right"></div>
+    <section class="heading">
+        <h1>Login</h1>
+        <p><a href="index.jsp">Home&nbsp;<i class="fas fa-home" style="color:black;text-decoration: none;"></i></a> >> <a href="login-now.jsp">Login</a></p>
     </section>
-    <!-- home section ends -->
 
-    <!-- banner section start -->
-    <section class="banner">
-        <div class="box">
-            <img src="images/banner-1.jpg" alt="">
-            <div class="content">
-                <span>Men's Glasses</span>
-                <h3>upto 50% off *</h3>
-                <a href="#" class="btn">Shop Now</a>
+    <!-- login section start -->
+
+    <section class="login-form">
+
+        <form name= "login_form" action="login.jsp" method="post">
+            <h3>User login</h3>
+            <div class="inputbox">
+                <span class="fas fa-user"></span>
+                <input type="email" name="login_mail" id="" placeholder="enter your email">
             </div>
-        </div>
-        <div class="box">
-            <img src="images/banner-2.jpg" alt="">
-            <div class="content">
-                <span>Women's Glasses</span>
-                <h3>upto 75% off *</h3>
-                <a href="#" class="btn">Shop Now</a>
+            <div class="inputbox">
+                <span class="fas fa-lock"></span>
+                <input type="password" name="login_pwd" id="" placeholder="enter your password">
             </div>
-        </div>
-        <div class="box">
-            <img src="images/banner-3.jpg" alt="">
-            <div class="content">
-                <span>Special Offer</span>
-                <h3>upto 40% off *</h3>
-                <a href="#" class="btn">Shop Now</a>
+            <input type="submit" value="Login now &#128275;" class="btn" onclick="readValues()">
+            <div class="flex">
+                <input type="checkbox" name="login_remember_me" id="remember-me" class="large-checkbox" value="remember_me">
+                <label for="remember-me">remember me</label>
+                <a href="forgot_password.html" style="color:black;text-decoration:none">forgot password?</a>
             </div>
-        </div>
+            <a href="register.html" class="btn">create an account</a>
+        </form>
+
+
     </section>
-<!-- banner section ends -->
+
+
+    <!-- login section ends -->
 
 <!-- Footer section start -->
     <section class="footer">
         <div class="box-container">
             <div class="box">
                 <h3>Quick links</h3>
-                <a href="index.html"><i class="fas fa-angle-right"></i>Home</a>
-                <a href="products.html"><i class="fas fa-angle-right"></i>Products</a>
+                <a href="index.jsp"><i class="fas fa-angle-right"></i>Home</a>
+                <a href="products.jsp"><i class="fas fa-angle-right"></i>Products</a>
                 <a href="about.html"><i class="fas fa-angle-right"></i>About</a>
                 <a href="blogs.html"><i class="fas fa-angle-right"></i>Blogs</a>
-                <a href="contact.html"><i class="fas fa-angle-right"></i>Contact</a>
-                <a href="login.html"><i class="fas fa-angle-right"></i>Login</a>
+                <a href="contact_us.jsp"><i class="fas fa-angle-right"></i>Contact</a>
+                <a href="login-now.jsp"><i class="fas fa-angle-right"></i>Login</a>
                 <a href="register.html"><i class="fas fa-angle-right"></i>Register</a>
-                <a href="cart.html"><i class="fas fa-angle-right"></i>Cart</a>
+                <a href="cart.jsp"><i class="fas fa-angle-right"></i>Cart</a>
             </div>
 
             <div class="box">
@@ -185,7 +151,7 @@
             </div>
         </div>
         <div class="credit">
-            Created by <span><a href="https://github.com/srikanth-kandi">Kandi Srikanth</a></span> | © 2022 | All rights reserved.
+            Created by <span><a href="https://github.com/srikanth-kandi">Kandi Srikanth</a></span> | &#169; 2022 | All rights reserved.
         </div>
     </section>
     <!-- footer section ends -->
