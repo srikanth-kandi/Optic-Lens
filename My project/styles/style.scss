@@ -718,6 +718,16 @@ section {
       color: $black;
       margin-bottom: 0.7rem;
     }
+    table{
+      .inputbox{
+          width: 100%;
+          padding: 1rem;
+          background: none;
+          font-size: 1.5rem;
+          color: #e84393;
+          text-transform: none;
+      }
+    }
     .inputbox {
       margin: 1rem 0;
       display: flex;

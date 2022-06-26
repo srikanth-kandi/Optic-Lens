@@ -707,6 +707,15 @@ section {
   color: #333;
   margin-bottom: 0.7rem;
 }
+.login-form form table .inputbox,
+.register-form form table .inputbox {
+  width: 100%;
+  padding: 1rem;
+  background: none;
+  font-size: 1.5rem;
+  color: #e84393;
+  text-transform: none;
+}
 .login-form form .inputbox,
 .register-form form .inputbox {
   margin: 1rem 0;

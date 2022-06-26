@@ -63,7 +63,7 @@
               </div>
               <div class="inputBox">
                 <span>zip code :</span>
-                <input type="text" placeholder="123 456" name="Zipcode"/>
+                <input type="text" placeholder="123456" name="Zipcode"/>
               </div>
             </div>
           </div>
@@ -73,7 +73,7 @@
 
             <div class="inputBox">
               <span>cards accepted :</span>
-              <img src="images/card_img.png" alt="" />
+              <img src="http://localhost:8081/OpticLens/images/card_img.png" alt="" />
             </div>
             <div class="inputBox">
               <span>name on card :</span>

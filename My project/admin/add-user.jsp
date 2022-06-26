@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- Local javascript -->
     <script src="http://localhost:8081/OpticLens/js/script.js" defer></script>
-    <title>Contact us | Optic Lens</title>
+    <title>Add User | Optic Lens</title>
 </head>
 <body>
     <!-- header section -->
@@ -40,7 +40,7 @@
         <a href="http://localhost:8081/OpticLens/admin/index.jsp" class="logo"><img src="http://localhost:8081/OpticLens/images/logo/eyeglasses_header.png" alt="">&nbsp;Optic Lens</a>
         <nav class="navbar">
             <ul>
-                <li><a href="http://localhost:8081/OpticLens/admin/index.jsp" class="active">Home</a></li>
+                <li style="background-color: #eee;font-weight: 900;"><a href="http://localhost:8081/OpticLens/admin/index.jsp" class="active">Home</a></li>
                 <li><a href="http://localhost:8081/OpticLens/admin/products.jsp">Products</a></li>
                 <li><a href="#">Pages <i class="ion-chevron-down"></i></span></a>
                     <ul>
@@ -48,20 +48,20 @@
                         <li><a href="http://localhost:8081/OpticLens/admin/blogs.html">Blog</a></li>
                     </ul>
                 </li>
-                <li style="background-color: #eee;font-weight: 900;"><a href="http://localhost:8081/OpticLens/admin/contact_us.jsp">Contact us</a></li>
+                <li><a href="http://localhost:8081/OpticLens/admin/contact_us.jsp">Contact us</a></li>
                 <li><a href="#">Hello &#128075; <% String index_uname = (String) session.getAttribute("success-admin-login-uname"); %> <%= index_uname %> <i class="ion-chevron-down"></i></a>
                     <ul>
                         <li>
-                            <a href="http://localhost:8081/OpticLens/admin/show-user.jsp">Show users</a>
+                            <a href="#">Show users</a>
                         </li>
                         <li>
-                            <a href="http://localhost:8081/OpticLens/admin/add-user.jsp">Add user</a>
+                            <a href="#">Add user</a>
                         </li>
                         <li>
-                            <a href="http://localhost:8081/OpticLens/admin/update-user.jsp">Update user</a>
+                            <a href="#">Update user</a>
                         </li>
                         <li>
-                            <a href="http://localhost:8081/OpticLens/admin/remove-user.jsp">Remove user</a>
+                            <a href="#">Remove user</a>
                         </li>
                         <li>
                             <a href="http://localhost:8081/OpticLens/admin-logout.jsp">Logout <i class="fas fa-sign-out-alt"></i></a>
@@ -75,7 +75,7 @@
             <div id="search-btn" class="fas fa-search"></div>
             <a href="http://localhost:8081/OpticLens/admin/cart.jsp" class="fas fa-shopping-cart"></a>
         </div>
-        <form action="" class="search-form">
+        <form action="" class="search-form" id="search-form">
             <input type="search" name="" id="search-box" placeholder="search here...">
             <label for="search-box" class="fas fa-search"></label>
         </form>
@@ -83,30 +83,45 @@
     <!-- header section ends -->
 
     <section class="heading">
-        <h1>Contact us</h1>
-        <p><a href="http://localhost:8081/OpticLens/admin/index.jsp">Home&nbsp;<i class="fas fa-home" style="color:black;text-decoration: none;"></i></a> >> <a href="http://localhost:8081/OpticLens/admin/contact_us.jsp">Contact us</a></p>
-    </section>
-    <!-- contact us section start -->
-
-    <section class="contact">
-        <h1 class="title">
-            get in touch
-        </h1>
-        <div class="row">
-            <form action="http://localhost:8081/OpticLens/admin/contact.jsp" method="post">
-                <input type="text" class="box" name="contact_name" id="" placeholder="your name">
-                <input type="email" class = "box" name="contact_mail" id="" placeholder="your email">
-                <input type="tel" class="box" name="contact_number" id="" placeholder="your number">
-                <textarea placeholder="your message" id="" cols="30" rows="10" name="contact_msg"></textarea>
-                <input type="submit" value="send message" class="btn">
-            </form>
-            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1042.7988137098!2d80.59505857760176!3d16.52594655947995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1643611936257!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
-        </div>
+        <h1>Add Users</h1>
+        <p><a href="http://localhost:8081/OpticLens/admin/index.jsp">Home&nbsp;<i class="fas fa-home" style="color:black;text-decoration: none;"></i></a> >> <a href="http://localhost:8081/OpticLens/admin/add-user.jsp">Add users</a></p>
     </section>
 
+    <!--Add user section starts-->
+    <section class="login-form">
 
-    <!-- contact us section ends -->
+        <form action="http://localhost:8081/OpticLens/admin/register.jsp" name="register_form" method="post">
+            <h3>Add User</h3>
+            <div class="inputbox">
+                <span class="fas fa-user"></span>
+                <input type="text" name="register_name" id="" placeholder="enter your name">
+            </div>
+            <div class="inputbox">
+                <span class="fas fa-envelope"></span>
+                <input type="email" name="register_email" id="" placeholder="enter your email">
+            </div>
+            <div class="inputbox">
+                <span class="fas fa-lock"></span>
+                <input type="password" name="register_password" id="" placeholder="enter your password">
+            </div>
+            <div class="inputbox">
+                <span class="fas fa-lock"></span>
+                <input type="password" name="register_confirm_password" id="" placeholder="confirm your password">
+            </div>
+            <div class="inputbox">
+                <select name="user_type">
+                    <option value="user">User</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </div>
 
+            <input type="submit" value="Add user &#128100;" class="btn">
+        </form>
+
+
+    </section>
+
+    <!--Add user section ends-->
 <!-- Footer section start -->
     <section class="footer">
         <div class="box-container">
@@ -119,7 +134,7 @@
                 <a href="http://localhost:8081/OpticLens/admin/contact_us.jsp"><i class="fas fa-angle-right"></i>Contact</a>
                 <a href="http://localhost:8081/OpticLens/login-now.jsp"><i class="fas fa-angle-right"></i>Login</a>
                 <a href="http://localhost:8081/OpticLens/register.html"><i class="fas fa-angle-right"></i>Register</a>
-                <a href="http://localhost:8081/OpticLens/cart.html"><i class="fas fa-angle-right"></i>Cart</a>
+                <a href="http://localhost:8081/OpticLens/admin/cart.jsp"><i class="fas fa-angle-right"></i>Cart</a>
             </div>
 
             <div class="box">
