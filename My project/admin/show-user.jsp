@@ -36,7 +36,7 @@ ResultSet rs=stmt.executeQuery();
     <!-- icons -->
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Local CSS -->
-    <link rel="stylesheet" href="http://localhost:8081/OpticLens/styles/style.css">
+    <link rel="stylesheet" href="http://localhost:8081/OpticLens/styles/show-user.css">
     <!-- Font awesome cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- Local javascript -->
@@ -95,31 +95,30 @@ ResultSet rs=stmt.executeQuery();
         <h1>Show Users</h1>
         <p><a href="http://localhost:8081/OpticLens/admin/index.jsp">Home&nbsp;<i class="fas fa-home" style="color:black;text-decoration: none;"></i></a> >> <a href="http://localhost:8081/OpticLens/admin/show-user.jsp">Show users</a></p>
     </section>
-
     <section class="login-form">
         <form action="#">
             <h3>Show users</h3>
             <table>
-                <div class="inputbox">
+                
                     <tr>
-                        <td align="center">Name</td>
-                        <td align="center">Email-ID</td>
-                        <td align="center">User type</td>
+                        <td align="center" style="font-weight:bold;font-size:15px;">Name</td>
+                        <td align="center" style="font-weight:bold;font-size:15px;">Email-ID</td>
+                        <td align="center" style="font-weight:bold;font-size:15px;">User type</td>
                     </tr>
-                </div>
+                
                 <%
                 while(rs.next())
                 {
                 %>
                 <tr>
-                <td><%=rs.getString(1)%></td>
-                <td><%=rs.getString(2)%></td>
-                <td><%=rs.getString(3)%></td>
+                <td style="font-size:15px;text-transform: none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=rs.getString(1)%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td style="font-size:15px;text-transform: none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=rs.getString(2)%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td style="font-size:15px;text-transform: none;"><%=rs.getString(3)%></td>
                 </tr>
                 <%
                 }
                 %>
-                </table>
+            </table>
                 <br>
                 <br>
                 <% }

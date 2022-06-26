@@ -694,7 +694,7 @@ section {
 .login-form form,
 .register-form form {
   margin: 1rem auto;
-  max-width: 40rem;
+  max-width: 55rem;
   border-radius: 2rem;
   border: 0.2rem solid #333;
   padding: 2rem;
@@ -874,4 +874,4 @@ section {
 }
 .shopping-cart .cart-total h3 span {
   color: green;
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=show-user.css.map */
