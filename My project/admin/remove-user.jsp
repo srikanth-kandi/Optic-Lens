@@ -52,16 +52,16 @@
                 <li><a href="#">Hello &#128075; <% String index_uname = (String) session.getAttribute("success-admin-login-uname"); %> <%= index_uname %> <i class="ion-chevron-down"></i></a>
                     <ul>
                         <li>
-                            <a href="#">Show users</a>
+                            <a href="http://localhost:8081/OpticLens/admin/show-user.jsp">Show users</a>
                         </li>
                         <li>
-                            <a href="#">Add user</a>
+                            <a href="http://localhost:8081/OpticLens/admin/add-user.jsp">Add user</a>
                         </li>
                         <li>
-                            <a href="#">Update user</a>
+                            <a href="http://localhost:8081/OpticLens/admin/update-user.jsp">Update user</a>
                         </li>
                         <li>
-                            <a href="#">Remove user</a>
+                            <a href="http://localhost:8081/OpticLens/admin/remove-user.jsp">Remove user</a>
                         </li>
                         <li>
                             <a href="http://localhost:8081/OpticLens/admin-logout.jsp">Logout <i class="fas fa-sign-out-alt"></i></a>
