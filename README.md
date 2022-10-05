@@ -1,6 +1,8 @@
 # Optic-Lens
 This is an html project of Front end development lab.
 
+[Required Oracle Database & Tomcat exe files](https://drive.google.com/drive/folders/1ER2m0xs-ovLVUHxWjeTbLOx6Lu0-dl40?usp=sharing)
+
 ```sql 
 SELECT SYS_CONTEXT('USERENV','SERVER_HOST') FROM dual /* 👉 System Name */;
 ```
