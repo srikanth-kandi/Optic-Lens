@@ -1,5 +1,11 @@
 # Optic-Lens
-This is an html project of Front end development lab.
+This is an Full Stack project developed as part of the my [college](https://www.lbrce.ac.in) Full Stack Web Development lab.
+
+This Project is developed using HTML5, CSS3, Bootstrap, JavaScript, Sass, Oracle DB, Apache tomcat.
+
+👉 This project includes an login and logout sessions
+
+👉 Admin access controls like user selection, updation and deletion
 
 [Required Oracle Database & Tomcat exe files](https://drive.google.com/drive/folders/1ER2m0xs-ovLVUHxWjeTbLOx6Lu0-dl40?usp=sharing)
 
