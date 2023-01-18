@@ -1,2 +1,0 @@
-INDEX VERSION 1.131+C:\Program Files\Apache Software Foundation\Tomcat 9.0\webapps\OpticLens\.metadata\.plugins\org.eclipse.jdt.core
-1865797976.index
