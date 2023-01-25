@@ -146,10 +146,15 @@
             </div>
         </div>
         <div class="credit">
-            Created by <span><a href="https://github.com/srikanth-kandi">Kandi Srikanth</a></span> | © 2022 | All rights
+            <span style="text-transform: none;">Made with 💖 by </span><span><a
+                    href="https://github.com/srikanth-kandi">Srikanth Kandi</a></span> | © <span id="copy-year"></span>
+            | All rights
             reserved.
         </div>
     </section>
+    <script>
+        document.getElementById("copy-year").innerHTML = new Date().getFullYear();
+    </script>
     <!-- footer section ends -->
 </body>
 
